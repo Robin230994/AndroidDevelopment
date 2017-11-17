@@ -192,58 +192,86 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-}
-    /**
+
+
+
 
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + four.getText());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(four.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(four.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + five.getText());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(five.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(five.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + six.getText());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(six.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(six.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + seven.getText());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(seven.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(seven.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + eight.toString());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(eight.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(eight.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = input.getText().toString();
-                result.setText(str + nine.getText());
+                if (firstNumber == 0) {
+                    firstNumber = Double.parseDouble(nine.getText() + "");
+                    result.setText(firstNumber + "");
+                } else {
+                    secondNumber = Double.parseDouble(nine.getText() + "");
+                    result.setText(secondNumber + "");
+                }
             }
         });
-
     }
 }
-         */
