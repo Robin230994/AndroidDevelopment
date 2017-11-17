@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,13 +37,11 @@ public class MainActivity extends AppCompatActivity {
     private Button delete;
     private Button coma;
 
-    private double firstNumber;
-    private double secondNumber;
+    private double res;
     boolean add;
     boolean sub;
     boolean mul;
     boolean div;
-    boolean calculateActive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +74,16 @@ public class MainActivity extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                result.setText(result.getText() + "" + plus.getText() );
                 add = true;
-                calculateActive = true;
             }
         });
 
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                result.setText(result.getText() + "" + minus.getText() );
                 sub = true;
-                calculateActive = true;
             }
 
         });
@@ -91,16 +91,16 @@ public class MainActivity extends AppCompatActivity {
         multiplication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                result.setText(result.getText() + "" + multiplication.getText() );
                 mul = true;
-                calculateActive = true;
             }
         });
 
         division.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                result.setText(result.getText() + "" + division.getText() );
                 div = true;
-                calculateActive = true;
             }
         });
 
@@ -108,26 +108,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (calculateActive == true) {
                     if (add == true) {
-                        result.setText(firstNumber + secondNumber + "");
+                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
+                        result.setText("" + res);
                         add = false;
                     }
 
                     if (sub == true) {
-                        input.setText(firstNumber - secondNumber + "");
+                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
+                        result.setText("" + res);
                         sub = false;
                     }
 
                     if (mul == true) {
-                        input.setText(firstNumber * secondNumber + "");
+                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
+                        result.setText("" + res);
                         mul = false;
                     }
 
                     if (div == true) {
-                        input.setText(firstNumber / secondNumber + "");
+                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
+                        result.setText("" + res);
                         div = false;
-                    }
+
                 }
 
 
@@ -137,13 +140,7 @@ public class MainActivity extends AppCompatActivity {
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(zero.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(zero.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + zero.getText() );
             }
         });
 
@@ -153,13 +150,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(one.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(one.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + one.getText() );
             }
         });
 
@@ -169,13 +160,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(two.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(two.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + two.getText() );
             }
         });
 
@@ -183,13 +168,7 @@ public class MainActivity extends AppCompatActivity {
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(three.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(three.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + three.getText() );
             }
         });
 
@@ -199,78 +178,42 @@ public class MainActivity extends AppCompatActivity {
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(four.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(four.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + four.getText() );
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(five.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(five.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + five.getText() );
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(six.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(six.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + six.getText() );
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(seven.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(seven.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + seven.getText() );
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(eight.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(eight.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + eight.getText() );
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (firstNumber == 0) {
-                    firstNumber = Double.parseDouble(nine.getText() + "");
-                    result.setText(firstNumber + "");
-                } else {
-                    secondNumber = Double.parseDouble(nine.getText() + "");
-                    result.setText(secondNumber + "");
-                }
+                result.setText(result.getText() + "" + nine.getText() );
             }
         });
     }
