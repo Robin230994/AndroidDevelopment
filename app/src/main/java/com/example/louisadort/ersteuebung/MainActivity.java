@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     boolean sub;
     boolean mul;
     boolean div;
+    private boolean fin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         nine = (Button) findViewById(R.id.nine);
         delete = (Button) findViewById(R.id.delete);
         coma = (Button) findViewById(R.id.coma);
+        fin = false;
 
 
         plus.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         multiplication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "" + multiplication.getText() );
+                result.setText(result.getText() + "*");
                 mul = true;
             }
         });
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         division.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "" + division.getText() );
+                result.setText(result.getText() + "/");
                 div = true;
             }
         });
@@ -130,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                         res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
                         result.setText("" + res);
                         div = false;
+
 
                 }
 
