@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Button coma;
 
     private double res;
+    private boolean fin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "" + plus.getText() );
-                add = true;
             }
         });
 
@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "" + minus.getText() );
-                sub = true;
             }
 
         });
@@ -89,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "*");
-                mul = true;
             }
         });
 
@@ -97,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "/");
-                div = true;
             }
         });
 
