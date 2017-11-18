@@ -38,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private Button coma;
 
     private double res;
-    boolean add;
-    boolean sub;
-    boolean mul;
-    boolean div;
-    private boolean fin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,31 +105,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                    if (add == true) {
                         res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
                         result.setText("" + res);
-                        add = false;
-                    }
-
-                    if (sub == true) {
-                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
-                        result.setText("" + res);
-                        sub = false;
-                    }
-
-                    if (mul == true) {
-                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
-                        result.setText("" + res);
-                        mul = false;
-                    }
-
-                    if (div == true) {
-                        res = new ExpressionBuilder(result.getText().toString()).build().evaluate();
-                        result.setText("" + res);
-                        div = false;
-
-
-                }
 
 
             }
